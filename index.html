@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>She Vibes — 66 Days of AI Learning</title>
+  <meta name="description" content="A tribute to 240+ women builders who spent 66 days learning, building, and growing together in the She Vibes AI Learning Cohort, guided by Karthi, Mitalee, Sindhu, and Adi." />
+  <meta property="og:title" content="She Vibes — 66 Days of AI Learning" />
+  <meta property="og:description" content="Mentor wisdom, frameworks, and insights from the She Vibes AI Learning Cohort." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #d946a6;
+      --pink-dark:  #be185d;
+      --orange:     #f97316;
+      --green:      #10b981;
+      --blue:       #3b82f6;
+      --text-dark:  #1f2937;
+      --text-light: #6b7280;
+      --bg-white:   #ffffff;
+      --bg-light:   #f9fafb;
+      --bg-dark:    #111827;
+      --radius:     12px;
+      --shadow:     0 4px 24px rgba(0,0,0,0.07);
+      --shadow-lg:  0 8px 40px rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; }
+    h3 { font-size: 1.15rem; font-weight: 600; }
+    p  { font-size: 0.975rem; color: var(--text-light); }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f0e6f0;
+      padding: 0 2rem;
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--pink), var(--orange));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; text-decoration: none;
+    }
+    nav { display: flex; gap: 0.25rem; }
+    nav a {
+      font-size: 0.85rem; font-weight: 500; color: var(--text-light);
+      text-decoration: none; padding: 0.5rem 0.85rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--pink); background: #fdf0fa; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text-dark); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #fff0f9 0%, #fff7f0 50%, #f0f9ff 100%);
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #fce7f3, #fff7ed);
+      color: var(--pink-dark);
+      font-size: 0.8rem; font-weight: 600;
+      padding: 0.4rem 1rem; border-radius: 999px;
+      border: 1px solid #fbcfe8;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 { max-width: 800px; margin: 0 auto 1.25rem; }
+    .hero h1 span { color: var(--pink); }
+    .hero-sub {
+      font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem;
+      color: var(--text-light);
+    }
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: white; font-weight: 600; font-size: 0.95rem;
+      padding: 0.8rem 2rem; border-radius: 999px;
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(217,70,166,0.35);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(217,70,166,0.45); }
+
+    .stats-row {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+    .stat-card {
+      background: white; border-radius: var(--radius);
+      padding: 1.5rem 2rem; text-align: center;
+      box-shadow: var(--shadow); min-width: 160px;
+      border-top: 3px solid var(--pink);
+    }
+    .stat-card:nth-child(2) { border-top-color: var(--orange); }
+    .stat-card:nth-child(3) { border-top-color: var(--green); }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 700; color: var(--pink);
+      line-height: 1;
+    }
+    .stat-card:nth-child(2) .stat-num { color: var(--orange); }
+    .stat-card:nth-child(3) .stat-num { color: var(--green); }
+    .stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 0.35rem; font-weight: 500; }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 0.75rem;
+    }
+    .section-header p { max-width: 580px; margin: 0.75rem auto 0; font-size: 1rem; }
+
+    /* ── MENTOR WISDOM ── */
+    #wisdom { background: var(--bg-light); }
+    .mentor-block { margin-bottom: 3.5rem; }
+    .mentor-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--text-dark);
+      border-left: 4px solid var(--pink);
+      padding-left: 1rem; margin-bottom: 1.5rem;
+    }
+    .mentor-label.orange { border-left-color: var(--orange); }
+    .mentor-label.green  { border-left-color: var(--green); }
+    .mentor-label.blue   { border-left-color: var(--blue); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .wisdom-card {
+      background: white; border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 3px solid var(--pink);
+      position: relative; overflow: hidden;
+    }
+    .wisdom-card.orange { border-top-color: var(--orange); }
+    .wisdom-card.green  { border-top-color: var(--green); }
+    .wisdom-card.blue   { border-top-color: var(--blue); }
+    .wisdom-card:hover  { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .wisdom-card h3     { font-size: 1rem; color: var(--text-dark); margin-bottom: 0.6rem; }
+    .wisdom-card p      { font-size: 0.875rem; line-height: 1.65; }
+    .wisdom-card em     { color: var(--pink); font-style: normal; font-weight: 600; }
+    .wisdom-card.orange em { color: var(--orange); }
+    .wisdom-card.green em  { color: var(--green); }
+    .wisdom-card.blue em   { color: var(--blue); }
+    .card-quote {
+      font-style: italic; color: var(--text-dark);
+      border-left: 3px solid #f9a8d4;
+      padding-left: 0.75rem; margin-top: 0.75rem;
+      font-size: 0.85rem; line-height: 1.6;
+    }
+    .wisdom-card.orange .card-quote { border-left-color: #fdba74; }
+    .wisdom-card.green  .card-quote { border-left-color: #6ee7b7; }
+    .wisdom-card.blue   .card-quote { border-left-color: #93c5fd; }
+
+    /* ── FRAMEWORKS ── */
+    #frameworks { background: white; }
+    .framework-card {
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 1.5rem; border-top: 4px solid var(--pink);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .framework-card:nth-child(4n+2) { border-top-color: var(--orange); }
+    .framework-card:nth-child(4n+3) { border-top-color: var(--green); }
+    .framework-card:nth-child(4n+4) { border-top-color: var(--blue); }
+    .framework-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .framework-card h3    { font-size: 1rem; margin-bottom: 0.5rem; }
+    .framework-card p     { font-size: 0.875rem; }
+
+    /* ── INSIGHTS ── */
+    #insights { background: var(--bg-light); }
+    .insight-card {
+      background: white; border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .insight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .insight-icon { font-size: 1.75rem; line-height: 1; }
+    .insight-card h3  { font-size: 1rem; }
+    .insight-card p   { font-size: 0.875rem; }
+
+    /* ── BEST PRACTICES ── */
+    #practices { background: white; }
+    .practices-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    }
+    .practice-group h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--text-dark);
+    }
+    .practice-list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .practice-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+      transition: transform 0.2s;
+    }
+    .practice-item:hover { transform: translateX(4px); }
+    .practice-num {
+      min-width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: white; font-weight: 700; font-size: 0.8rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .practice-item:nth-child(n+5) .practice-num {
+      background: linear-gradient(135deg, var(--orange), #ea580c);
+    }
+    .practice-text h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .practice-text p  { font-size: 0.82rem; }
+
+    /* ── CLOSING ── */
+    #closing {
+      background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+      color: white; text-align: center; padding: 5rem 2rem;
+    }
+    #closing h2   { color: white; margin-bottom: 1.25rem; }
+    #closing p    { color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto 0.75rem; font-size: 1rem; }
+    #closing .tag { background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.3); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-dark); color: rgba(255,255,255,0.7);
+      padding: 3.5rem 2rem 2rem; text-align: center;
+    }
+    .footer-inner { max-width: 700px; margin: 0 auto; }
+    .footer-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--pink), var(--orange));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; display: block; margin-bottom: 0.5rem;
+    }
+    footer p       { font-size: 0.85rem; margin-bottom: 0.4rem; }
+    .footer-credits { margin: 1.5rem 0 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.55);
+      margin-top: 1.25rem;
+    }
+
+    /* ── FADE IN ANIMATION ── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .practices-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      nav { display: none; }
+      nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 1rem; border-bottom: 1px solid #f0e6f0; box-shadow: var(--shadow); }
+      .nav-toggle { display: block; }
+      .hero { padding: 4rem 1.25rem 3rem; }
+      .stats-row { flex-direction: column; align-items: center; }
+      section { padding: 3.5rem 1.25rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; transition: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header role="banner">
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="She Vibes home">She Vibes ✨</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav" role="navigation" aria-label="Main navigation">
+      <a href="#wisdom">Mentor Wisdom</a>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#insights">Key Insights</a>
+      <a href="#practices">Best Practices</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" role="main" aria-labelledby="hero-heading">
+  <div class="hero-badge">66 Days · AI Learning Cohort · 2026</div>
+  <h1 id="hero-heading">
+    <span>She Vibes</span> Mentor Wisdom<br>&amp; Frameworks
+  </h1>
+  <p class="hero-sub">
+    A tribute to 240+ women builders who spent 66 days learning, building, and growing with AI — guided by mentors who gave freely of their wisdom every single day.
+  </p>
+  <a href="#wisdom" class="hero-cta">Explore the Wisdom</a>
+
+  <div class="stats-row" role="list" aria-label="Cohort statistics">
+    <div class="stat-card fade-in" role="listitem">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Insights Captured</div>
+    </div>
+    <div class="stat-card fade-in" role="listitem">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Core Frameworks</div>
+    </div>
+    <div class="stat-card fade-in" role="listitem">
+      <div class="stat-num">240+</div>
+      <div class="stat-label">Community Members</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MENTOR WISDOM ══════════════ -->
+<section id="wisdom" aria-labelledby="wisdom-heading">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag">Mentor Wisdom</span>
+      <h2 id="wisdom-heading">Words That Change Everything</h2>
+      <p>Distilled from hundreds of office hours, morning sessions, and late-night conversations — the insights that shaped 240+ builders.</p>
+    </div>
+
+    <!-- KARTHI -->
+    <div class="mentor-block">
+      <div class="mentor-label fade-in">👩‍🏫 Karthi Subbaraman</div>
+      <div class="cards-grid">
+
+        <article class="wisdom-card fade-in" aria-label="AI as Amplifier">
+          <h3>AI as Amplifier</h3>
+          <p>AI doesn't replace you — it <em>amplifies</em> you. Every tool, every shortcut, every automation makes the best version of you larger and louder.</p>
+          <blockquote class="card-quote">"I am at least a hundred X of Karthi of what I was before — thanks to AI."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="The Trust Index">
+          <h3>The Trust Index</h3>
+          <p>Build your <em>Trust Index</em> with AI over time — just like any relationship. Start at 40–60%, observe outputs, validate, and let trust grow with evidence.</p>
+          <blockquote class="card-quote">"Play enough with the tools so that you can understand the Trust Index."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Think, Do, Articulate">
+          <h3>Think · Do · Articulate</h3>
+          <p>The three metaskills of the modern era. AI helps with <em>Doing</em> and <em>Articulating</em> — but <em>Thinking</em> is still yours to own. Never outsource your reasoning.</p>
+          <blockquote class="card-quote">"It is a reasoning engine. It understands the context, but thinking is still our job."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Value Operators">
+          <h3>We Are All Value Operators</h3>
+          <p>Forget job titles. PMs, designers, engineers — we all <em>create, deliver, communicate, and capture value</em>. Whoever does this best, wins.</p>
+          <blockquote class="card-quote">"There are no PMs, designers, and engineers. We are all value operators."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Trust But Verify">
+          <h3>Trust But Verify</h3>
+          <p>AI changed the way Karthi looks at everything. The default is no longer face value — it's <em>trust but verify</em>. Verify what you can; hold back on what you can't.</p>
+          <blockquote class="card-quote">"I'm able to verify it and if I am not, I am not taking it on face value."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="The Knife Analogy">
+          <h3>The Knife Analogy</h3>
+          <p>Refusing AI because of dependence fears is like refusing a kitchen knife. <em>AI is a tool</em> — use it. The skill is knowing you remain you, and AI stays the tool.</p>
+          <blockquote class="card-quote">"Are we saying we will not work with a knife in the kitchen?"</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Privacy & Data">
+          <h3>Privacy Is a Personal Choice</h3>
+          <p>On the internet, all of us are naked. The honest <em>cost-benefit</em>: if you give no context, tools can't work. If you give everything, there are risks. Your call, always.</p>
+          <blockquote class="card-quote">"There is always a way it can leak — be okay with that, or do not use it. The choice is ours."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Fresh Context & Chat Design">
+          <h3>Fresh Context Is Everything</h3>
+          <p>A chat is a fresh context. Don't mix travel, health, and work in one thread — you confuse the AI. Use <em>focused chats</em>, projects with memory, and specific threads for specific goals.</p>
+          <blockquote class="card-quote">"Keep the context with that one thing — don't make it a kichadi."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Known to Unknown Bridge">
+          <h3>Known → Unknown Bridge</h3>
+          <p>Learning only works when you bridge from the known to the unknown. Two unknowns with no bridge = overwhelm. Always anchor new learning to something <em>already familiar</em>.</p>
+          <blockquote class="card-quote">"Known to unknown is the bridge. If it is unknown to unknown, there is no bridge."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Cognitive Atrophy">
+          <h3>Guard Against Cognitive Atrophy</h3>
+          <p>Too much reliance isn't good for you either. <em>Critical thinking</em> is a human skill we must protect. Use AI to amplify, not to abdicate your reasoning entirely.</p>
+          <blockquote class="card-quote">"Cognitive atrophy is real. Outsource the doing, never the thinking."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="66 Days to Build the Habit">
+          <h3>66 Days to Build the Muscle</h3>
+          <p>The science of habits: 40% drop off in week one. Survive week one and you'll make it. <em>66 days</em> is the number that turns a forced effort into an earned muscle.</p>
+          <blockquote class="card-quote">"The first week is the hardest. If you survive it, you will go on well for the second."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Speed vs Accuracy">
+          <h3>Speed vs Accuracy Balance</h3>
+          <p>Speed destroys accuracy; accuracy can kill speed. The art is finding the <em>balance between the two</em> — knowing when to move fast and when to slow down for quality.</p>
+          <blockquote class="card-quote">"When things move fast, at least capture release notes of all your thinking and decisions."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="AI-Forward Designer">
+          <h3>The AI-Forward Professional</h3>
+          <p>AI-forward isn't a title — it's a <em>way of working</em>. Show first, build second. Contract the cycle. Make iteration so cheap that the thinking becomes the bottleneck, not the doing.</p>
+          <blockquote class="card-quote">"The barrier to doing is on the floor. Whoever orchestrates the moving parts wins."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Fire Parts of Yourself">
+          <h3>Fire Parts of Yourself Daily</h3>
+          <p>Every day, identify one thing AI can do instead of you. <em>Delegate it</em>. What remains is the irreplaceable you — the judgment, the taste, the creative spark that no model can replicate.</p>
+          <blockquote class="card-quote">"See if you can fire a part of yourself every single day so that you don't have to do that job."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Learning How the Brain Works">
+          <h3>Learn How Learning Works</h3>
+          <p>The brain is a processing engine, not a storage engine. Even if there's an ocean of content, you can only gulp it through a straw. <em>Design your learning</em> for the straw, not the ocean.</p>
+          <blockquote class="card-quote">"Focus on getting the job done, not memorizing concepts."</blockquote>
+        </article>
+
+        <article class="wisdom-card fade-in" aria-label="Completion = Serotonin">
+          <h3>Completion = Serotonin</h3>
+          <p>Don't explore without finishing. Your evidence of completion builds <em>confidence</em>. Print the document. Complete the flow. Small wins compound into unshakeable momentum.</p>
+          <blockquote class="card-quote">"Don't be stuck on trying new things and not finishing your goal. Give yourself serotonin with completion."</blockquote>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- MITALEE -->
+    <div class="mentor-block">
+      <div class="mentor-label orange fade-in">🧠 Mitalee — AI PM &amp; Evals Lead</div>
+      <div class="cards-grid">
+
+        <article class="wisdom-card orange fade-in" aria-label="AI PM Mindset">
+          <h3>The New PM Superpower</h3>
+          <p>AI PMs don't write long specs. They <em>prototype super fast</em>, find edge cases immediately, and write <em>eval specs</em> instead of PRDs. Show, don't tell.</p>
+          <blockquote class="card-quote">"We don't write specs, we show. And we write 'eval specs' — what a user asks and what the answer should be."</blockquote>
+        </article>
+
+        <article class="wisdom-card orange fade-in" aria-label="Evals First">
+          <h3>Evals First, MVP Second</h3>
+          <p>Start your AI product with an <em>eval spec</em> — not wireframes, not a PRD. Evals are your training set. They prevent scenario drift and keep your MVP grounded in real intent.</p>
+          <blockquote class="card-quote">"Start with an eval spec — life will be vastly better than if you build an MVP and the original intent pivots."</blockquote>
+        </article>
+
+        <article class="wisdom-card orange fade-in" aria-label="Focus on Scenarios Not LLMs">
+          <h3>Focus on Scenarios, Not LLMs</h3>
+          <p>The craft of a PM in AI is not understanding which model is best — it's understanding <em>scenarios</em> and maximizing AI potential while minimizing scenario drift.</p>
+          <blockquote class="card-quote">"AI PMs today have to focus on scenarios, rather than LLMs. I don't even look at hallucinations anymore."</blockquote>
+        </article>
+
+        <article class="wisdom-card orange fade-in" aria-label="Manual Evals">
+          <h3>Verification = Manual Evals</h3>
+          <p>All output verification is called <em>manual evals</em>. Check the output. Compare against sourced answers from you or another expert. For math, always use a calculator or code. Never trust the LLM on numbers.</p>
+          <blockquote class="card-quote">"Insight: you need to have sourced the right answers first — then verify with what the model gives you."</blockquote>
+        </article>
+
+        <article class="wisdom-card orange fade-in" aria-label="Designers Doing Evals">
+          <h3>Everyone Does Evals Now</h3>
+          <p>At Microsoft, designers do evals. Researchers do evals. When prototyping is possible by everyone, <em>evaluation becomes the new differentiation</em> — not the ability to build.</p>
+          <blockquote class="card-quote">"The window to iteration with live customer feedback has been squeezed to the bare minimum — sometimes just 2 weeks."</blockquote>
+        </article>
+
+        <article class="wisdom-card orange fade-in" aria-label="Protect Your Critical Thinking">
+          <h3>Protect Your Critical Thinking</h3>
+          <p>There was a period of just outsourcing everything. It cost Mitalee her critical thinking. <em>New skills now</em>: reviewing LLM outputs carefully, understanding what the AI writes, and sometimes going back to writing alone.</p>
+          <blockquote class="card-quote">"I actually lost my critical thinking skills. It was a period of me just outsourcing stuff."</blockquote>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ADI -->
+    <div class="mentor-block">
+      <div class="mentor-label blue fade-in">⚡ Adi — Platform &amp; Engineering Lead</div>
+      <div class="cards-grid">
+
+        <article class="wisdom-card blue fade-in" aria-label="Zone of Genius">
+          <h3>Zone of Genius vs Beyond</h3>
+          <p>Anything beyond your zone of genius? <em>Use AI without hesitation</em> — it gets you to your goal faster. Inside your zone? AI handles the repeated parts, and you handle what only you can do.</p>
+          <blockquote class="card-quote">"Using AI is a superpower any time there is a circle beyond your reach. We're living in a very good time right now."</blockquote>
+        </article>
+
+        <article class="wisdom-card blue fade-in" aria-label="Workflow Breakdown">
+          <h3>Break the Workflow First</h3>
+          <p>Before building any automation or skill: <em>manually map your workflow block by block</em>. Identify what can be automated (maybe 40%). Build a specific skill for that — not for the entire thing at once.</p>
+          <blockquote class="card-quote">"Understand your current manual workflow, see what gets automated, then create a skill for that."</blockquote>
+        </article>
+
+        <article class="wisdom-card blue fade-in" aria-label="Start Small">
+          <h3>Start Absurdly Small</h3>
+          <p>The best way to get going is to start <em>super small</em>. Get it working on one tiny thing. It's addictive. One win leads to the next, and before you know it, you've built something real.</p>
+          <blockquote class="card-quote">"Start small. Like super small. It's so much fun, it's addictive."</blockquote>
+        </article>
+
+        <article class="wisdom-card blue fade-in" aria-label="Claude Cowork for Beginners">
+          <h3>Claude Cowork as a Starting Point</h3>
+          <p>For automation beginners: use <em>Claude Cowork</em>. Ask it to fetch emails, read messages, browse pages. Play with it. You'll generate dozens of real use cases just from exploring.</p>
+          <blockquote class="card-quote">"Just play around with that — you will get lots and lots of ideas. It's the best way to get started right now."</blockquote>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- SINDHU -->
+    <div class="mentor-block">
+      <div class="mentor-label green fade-in">🌱 Sindhu Kandipati — Learning &amp; Strategy</div>
+      <div class="cards-grid">
+
+        <article class="wisdom-card green fade-in" aria-label="Create a Learning Plan">
+          <h3>Create Your Own Learning Plan</h3>
+          <p>Explore broadly, then narrow down. Try design, product, engineering tools. <em>Pick the areas most relevant to you</em> and go deep there. You can't know everything — decide to be a generalist or specialist.</p>
+          <blockquote class="card-quote">"It's impossible to know everything. Deciding whether you want to be a generalist or specialist can help you stay focused."</blockquote>
+        </article>
+
+        <article class="wisdom-card green fade-in" aria-label="Learn by Doing">
+          <h3>Learn by Building, Not Reading</h3>
+          <p>Build a few prototypes. Experiment. The <em>hands-on experience</em> compounds faster than any course. Use AI to accelerate that learning — it removes the barrier of technical skill from the loop.</p>
+          <blockquote class="card-quote">"I explored a range of areas before narrowing my focus. Eventually I decided to build prototypes and learn by doing."</blockquote>
+        </article>
+
+        <article class="wisdom-card green fade-in" aria-label="Ask Probing Questions">
+          <h3>Ask Probing Questions of AI Output</h3>
+          <p>For important queries: ask what <em>assumptions</em> are being made, what could be wrong, and what the margin of error is. View the answer from a product lens, a technical lens, a business lens.</p>
+          <blockquote class="card-quote">"For anything important: cross-check, question, and do a quick real-world sanity check. Adjust the level of validation to the impact."</blockquote>
+        </article>
+
+        <article class="wisdom-card green fade-in" aria-label="Roles Are Blurring">
+          <h3>Roles Are Blurring — Expand Your Reach</h3>
+          <p>QA, PM, Design, Engineering — the lines are <em>actively dissolving</em>. Differentiation now comes from domain knowledge, judgment, and the ability to connect AI to real business problems.</p>
+          <blockquote class="card-quote">"Use AI to your advantage — it can significantly accelerate your learning. What truly differentiates you is still you."</blockquote>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FRAMEWORKS ══════════════ -->
+<section id="frameworks" aria-labelledby="frameworks-heading">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag">Frameworks</span>
+      <h2 id="frameworks-heading">Models for Thinking &amp; Building</h2>
+      <p>Reusable mental models that surfaced across 66 days of shared learning — apply them to your work today.</p>
+    </div>
+    <div class="cards-grid">
+
+      <article class="framework-card fade-in">
+        <h3>Think · Do · Articulate</h3>
+        <p>The three metaskills of the AI era. AI accelerates Do and Articulate — but Thinking is irreplaceable. Invest more time in thinking well, because AI execution is getting cheaper every day.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>The Trust Index</h3>
+        <p>Build your personal trust calibration for each AI tool. Start conservative (40–60%), watch outputs, validate against ground truth, and increment trust as evidence accumulates. Never set it to 100%.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Eval-First Development</h3>
+        <p>Before writing code or wireframes, write an eval spec: what the user asks + what the ideal answer looks like. This becomes your north star and prevents scope creep, hallucination drift, and rework.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Value Operator Model</h3>
+        <p>Strip away titles. Every professional creates, delivers, communicates, and captures value. AI changes the tools, not the mission. Whoever operationalizes value creation fastest will lead in the AI era.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Known → Unknown Bridge</h3>
+        <p>Learning happens only when you have one known and one unknown. Connect them. Two unknowns with no bridge leads to overwhelm and dropout. Always anchor new concepts to something already understood.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Workflow Breakdown Before Automation</h3>
+        <p>Map every step of your manual workflow first. Block by block. Identify which 40% could be automated. Then build a targeted skill for that 40% — don't try to automate everything at once.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Zone of Genius Framework</h3>
+        <p>Everything within your zone of genius: protect it, maybe automate repetitive parts. Everything outside it: use AI freely and aggressively. The goal is to operate exclusively within your genius zone.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Privacy Cost-Benefit Model</h3>
+        <p>Every data-sharing decision is a trade. Weigh the benefit of better AI output against the cost of exposure. Make the decision consciously, not by default. Your data strategy is a personal constitution.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>The 8 Levels of Prompting</h3>
+        <p>Zero-shot → One-shot → Few-shot → Role prompting → Chain of thought → Prompt chaining → System prompts → Meta prompting. Each level unlocks a new dimension of AI capability and output quality.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Show Don't Tell Prompting</h3>
+        <p>Two well-chosen examples beat three paragraphs of instruction every time. When prompting AI, show the format, tone, and structure you want — don't describe it. Examples are the most efficient context.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Context Engineering Model</h3>
+        <p>AI is only as good as its context. Give it your documents, calendar, emails, and domain knowledge. The shift from casual conversation to integrated workflow happens when context becomes continuous.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>Speed vs Accuracy Balance</h3>
+        <p>Fast prototypes generate learning; slow verification ensures quality. For exploration, optimize speed. For production, optimize accuracy. The mistake is applying the wrong mode to the wrong phase.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>AI as Mirror Principle</h3>
+        <p>The quality of AI output reflects the clarity of your thinking. A bad response isn't a failure — it's information about a gap in your prompt or reasoning. You are always the variable that matters most.</p>
+      </article>
+
+      <article class="framework-card fade-in">
+        <h3>7 E's Learning Framework</h3>
+        <p>Pay for the first four stages of learning (Exposure, Exploration, Experience, Evaluation). Get paid for the last three (Expertise, Expression, Elevation). The goal of Viber is to take you from the first four to the last three.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ KEY INSIGHTS ══════════════ -->
+<section id="insights" aria-labelledby="insights-heading">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag">Key Insights</span>
+      <h2 id="insights-heading">Critical Truths from 66 Days</h2>
+      <p>Condensed lessons that took months of building, failing, questioning, and reflecting to arrive at.</p>
+    </div>
+    <div class="cards-grid">
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🪞</div>
+        <h3>AI Is a Mirror of Your Clarity</h3>
+        <p>Bad output from AI means unclear thinking from you. Fix the thinking; the output will follow. The model is rarely the problem — the prompt almost always is.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🧠</div>
+        <h3>You Are Still Required</h3>
+        <p>AI takes over doing and articulating — judgment, taste, and decision-making remain exclusively human. The professional who combines both will be unstoppable.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🌐</div>
+        <h3>Context Is Everything</h3>
+        <p>A model without context is a powerful tool in an empty room. Feed it your world — your documents, goals, constraints — and watch the output transform from generic to irreplaceable.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🔨</div>
+        <h3>Learn by Building</h3>
+        <p>Reading about AI is 10% as effective as building with it. Ship something broken. Iterate. Ship something better. The loop is the learning — there is no other way.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">⚖️</div>
+        <h3>Privacy Is Always a Trade</h3>
+        <p>There is no free lunch with data. Every AI interaction involves a cost-benefit decision. Make it consciously — don't share names or sensitive specifics you wouldn't want exposed.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🚀</div>
+        <h3>Collective Level-Up Is Real</h3>
+        <p>When one person on a team levels up with AI, everyone benefits. When the whole team levels up together, the velocity compound becomes almost impossible for others to match.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">✅</div>
+        <h3>Completion Builds Confidence</h3>
+        <p>Exploring ten half-built things leaves you with ten fragments and no confidence. Finishing one small thing — really finishing it — builds more capacity than any course.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🎯</div>
+        <h3>Evals Are the New Specs</h3>
+        <p>For AI products, eval specs replace PRDs. They describe success criteria in terms of user input and ideal output — grounding the team in real behavior, not theoretical features.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">⚡</div>
+        <h3>Speed ≠ Accuracy</h3>
+        <p>AI makes doing fast, but fast execution of a wrong direction is just faster failure. The thinking phase must get slower and more deliberate, even as the execution phase accelerates.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🧩</div>
+        <h3>Model Blending Works</h3>
+        <p>Different models have different strengths. Blend them. Use one for generation, another for critique, another for research. The orchestrator who knows when to use which tool wins.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🌱</div>
+        <h3>Learning Happens Gradually, Then Suddenly</h3>
+        <p>Week one feels impossible. Week three feels natural. Week six feels obvious. The curve is not linear. Trust the discomfort — it means you are on the right side of the learning graph.</p>
+      </article>
+
+      <article class="insight-card fade-in">
+        <div class="insight-icon" aria-hidden="true">🔁</div>
+        <h3>Amplify, Don't Abdicate</h3>
+        <p>The most dangerous AI habit is using it to replace thinking entirely. The highest-value use is using it to amplify thinking — so your best ideas spread farther and faster than ever before.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BEST PRACTICES ══════════════ -->
+<section id="practices" aria-labelledby="practices-heading">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag">Best Practices</span>
+      <h2 id="practices-heading">How to Build &amp; Work with AI</h2>
+      <p>Practical patterns that emerged from 66 days of real builds, real failures, and real breakthroughs.</p>
+    </div>
+    <div class="practices-grid">
+
+      <div class="practice-group fade-in">
+        <h3>When Building with AI</h3>
+        <div class="practice-list">
+          <div class="practice-item">
+            <div class="practice-num">1</div>
+            <div class="practice-text">
+              <h4>Start with a Real Use Case</h4>
+              <p>Don't search for problems that fit your solution. Start with a genuine problem you live with, and let that drive the build. Real use cases produce real learning.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">2</div>
+            <div class="practice-text">
+              <h4>Write Eval Specs First</h4>
+              <p>Before touching a line of code or a design tool, define: what does the user ask, and what should the ideal response look like? This is your north star and your quality gate.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">3</div>
+            <div class="practice-text">
+              <h4>Give Complete Context</h4>
+              <p>AI performs at the level of context you provide. Give it your role, your constraints, your data, your audience. A context-rich prompt beats a clever prompt every time.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">4</div>
+            <div class="practice-text">
+              <h4>Map the Manual Workflow First</h4>
+              <p>Before automating anything, walk through the workflow manually. Step by step. Only then can you see what's worth automating, and what still needs the human touch.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">5</div>
+            <div class="practice-text">
+              <h4>Validate Every Output</h4>
+              <p>Especially for math, facts, and high-stakes decisions. Use a calculator. Cross-reference. Ask follow-up questions. Trust but verify is not optional — it's the practice.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">6</div>
+            <div class="practice-text">
+              <h4>Document Your Decisions</h4>
+              <p>Even if you're moving fast, capture release notes of your thinking. When prototypes are non-deterministic, a decision trail is the only way to understand how you got here.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">7</div>
+            <div class="practice-text">
+              <h4>Prioritize Quick Wins</h4>
+              <p>Build parts of your solution and see them working. That working piece is your quick win. Big complex visions are overwhelming — quick wins keep momentum and confidence alive.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">8</div>
+            <div class="practice-text">
+              <h4>Build Gradually, Not All at Once</h4>
+              <p>Focus on works first, looks last. Functional beats beautiful at the start. Ship something real, get feedback, iterate. The best builders start embarrassingly small.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="practice-group fade-in">
+        <h3>When Working in Teams</h3>
+        <div class="practice-list">
+          <div class="practice-item">
+            <div class="practice-num">1</div>
+            <div class="practice-text">
+              <h4>Everyone Levels Up Together</h4>
+              <p>An AI-forward PM deserves an AI-forward designer. An AI-forward designer deserves an AI-forward engineer. If one wheel is slow, the whole car slows down. Level up as a unit.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">2</div>
+            <div class="practice-text">
+              <h4>Run Cross-Functional Evals</h4>
+              <p>Evaluation is no longer a QA job. PMs, designers, researchers, and engineers all participate. Build shared evals that everyone can contribute to and everyone can trust.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">3</div>
+            <div class="practice-text">
+              <h4>Think as Value Operators</h4>
+              <p>Strip away role silos. Everyone asks: how does this create, deliver, and communicate value? This question — not job description — should drive every decision on an AI-forward team.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">4</div>
+            <div class="practice-text">
+              <h4>Hold Regular Sync Points</h4>
+              <p>Async AI work creates divergence fast. Regular sync moments — even 30 minutes weekly — keep the team aligned on what's working, what's drifting, and what needs a course correction.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">5</div>
+            <div class="practice-text">
+              <h4>Share What You're Learning</h4>
+              <p>Every discovery, every prompt trick, every shortcut — share it in a shared space. The team that shares its learning compounds faster than the team of individual learners working alone.</p>
+            </div>
+          </div>
+          <div class="practice-item">
+            <div class="practice-num">6</div>
+            <div class="practice-text">
+              <h4>Set Boundaries for Your Genius</h4>
+              <p>Define what only you can do on the team. Protect that. Automate everything else. When everyone operates from their zone of genius, the team becomes exponentially more powerful.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CLOSING ══════════════ -->
+<section id="closing" aria-labelledby="closing-heading">
+  <div class="section-inner">
+    <span class="section-tag tag" style="background:rgba(255,255,255,0.2);color:white;border:1px solid rgba(255,255,255,0.3);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:inline-block;padding:0.4rem 1rem;border-radius:999px;margin-bottom:1rem;">66 Days. Earned.</span>
+    <h2 id="closing-heading">Keep Learning, Keep Building</h2>
+    <p>Karthi put it best: the learning design is to keep your learnability high, keep it challenging with time, and enhance your ability to use AI. As a result, your overwhelm will reduce. Some of you unlocked this in week one. When you complete Viber, it will be totally gone.</p>
+    <p style="margin-top:0.75rem;">The habit of learning every day will be with you — and that is the only gift that truly compounds.</p>
+    <p style="font-style:italic; margin-top:1.5rem; color:rgba(255,255,255,0.75);">"Use this space to see how we are building the product on the go, build the habit of learning and using AI in your life, and build a career out of AI by being curious and going the extra mile." — Karthi</p>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <span class="footer-logo">She Vibes ✨</span>
+    <p>A tribute to the She Vibes AI Learning Cohort — 66 days of building, learning, and growing together.</p>
+    <div class="footer-credits">
+      <p>Built by <strong style="color:rgba(255,255,255,0.75);">Bharath S</strong> · She Vibes Cohort 2026</p>
+      <p style="margin-top:0.4rem;">Mentors: <strong style="color:rgba(255,255,255,0.6);">Karthi Subbaraman</strong> · <strong style="color:rgba(255,255,255,0.6);">Mitalee</strong> · <strong style="color:rgba(255,255,255,0.6);">Sindhu Kandipati</strong> · <strong style="color:rgba(255,255,255,0.6);">Adi</strong></p>
+      <p style="margin-top:0.4rem;">Built with ❤️ using Claude · Powered by PiFo Foundation</p>
+    </div>
+    <p class="footer-quote">"The artifact will enhance delivery, delivery gives visibility, and if the matter is great you will build credibility."</p>
+  </div>
+</footer>
+
+<!-- ══════════════ JAVASCRIPT ══════════════ -->
+<script>
+  // ── Fade-in on scroll ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Active nav link on scroll ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const activateLink = () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  };
+  window.addEventListener('scroll', activateLink, { passive: true });
+
+  // ── Mobile nav toggle ──
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('main-nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  // ── Smooth scroll polyfill for older browsers ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+
+</body>
+</html>
