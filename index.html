@@ -107,27 +107,6 @@
     }
     .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(217,70,166,0.45); }
 
-    .stats-row {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem;
-      margin-top: 3.5rem;
-    }
-    .stat-card {
-      background: white; border-radius: var(--radius);
-      padding: 1.5rem 2rem; text-align: center;
-      box-shadow: var(--shadow); min-width: 160px;
-      border-top: 3px solid var(--pink);
-    }
-    .stat-card:nth-child(2) { border-top-color: var(--orange); }
-    .stat-card:nth-child(3) { border-top-color: var(--green); }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem; font-weight: 700; color: var(--pink);
-      line-height: 1;
-    }
-    .stat-card:nth-child(2) .stat-num { color: var(--orange); }
-    .stat-card:nth-child(3) .stat-num { color: var(--green); }
-    .stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 0.35rem; font-weight: 500; }
-
     /* ── SECTIONS ── */
     section { padding: 5rem 2rem; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -469,7 +448,6 @@
       nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 1rem; border-bottom: 1px solid #f0e6f0; box-shadow: var(--shadow); }
       .nav-toggle { display: block; }
       .hero { padding: 4rem 1.25rem 3rem; }
-      .stats-row { flex-direction: column; align-items: center; }
       section { padding: 3.5rem 1.25rem; }
       .cards-grid { grid-template-columns: 1fr; }
     }
@@ -509,21 +487,6 @@
     A tribute to 240+ women builders who spent 66 days learning, building, and growing with AI — guided by mentors who gave freely of their wisdom every single day.
   </p>
   <a href="#wisdom" class="hero-cta">Explore the Wisdom</a>
-
-  <div class="stats-row" role="list" aria-label="Cohort statistics">
-    <div class="stat-card fade-in" role="listitem">
-      <div class="stat-num">50+</div>
-      <div class="stat-label">Insights Captured</div>
-    </div>
-    <div class="stat-card fade-in" role="listitem">
-      <div class="stat-num">12+</div>
-      <div class="stat-label">Core Frameworks</div>
-    </div>
-    <div class="stat-card fade-in" role="listitem">
-      <div class="stat-num">240+</div>
-      <div class="stat-label">Community Members</div>
-    </div>
-  </div>
 </section>
 
 <!-- ══════════════ ORIGIN STORY ══════════════ -->
