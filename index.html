@@ -416,61 +416,13 @@
 
     /* ── THANK YOU ── */
     #thankyou { background: var(--bg-light); }
-    .thankyou-intro {
-      text-align: center; max-width: 640px; margin: 0 auto 3.5rem;
-    }
-    .thankyou-intro p { font-size: 1rem; line-height: 1.8; }
-
-    .mentor-cards-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-    .mentor-ty-card {
-      background: white; border-radius: var(--radius);
-      padding: 2rem 1.5rem; box-shadow: var(--shadow);
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative; overflow: hidden;
-    }
-    .mentor-ty-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--pink), var(--orange));
-    }
-    .mentor-ty-card:nth-child(2)::before { background: linear-gradient(90deg, #7c3aed, var(--pink)); }
-    .mentor-ty-card:nth-child(3)::before { background: linear-gradient(90deg, var(--green), var(--blue)); }
-    .mentor-ty-card:nth-child(4)::before { background: linear-gradient(90deg, var(--blue), var(--green)); }
-    .mentor-ty-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-.mentor-ty-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; font-weight: 700; color: var(--text-dark);
-      margin-bottom: 0.2rem;
-    }
-    .mentor-ty-message {
-      font-size: 0.875rem; color: var(--text-light); line-height: 1.7;
-    }
-    .mentor-ty-quote {
-      margin-top: 1.1rem; padding-top: 1.1rem;
-      border-top: 1px solid #f3f4f6;
-      font-style: italic; font-size: 0.82rem;
-      color: var(--pink); line-height: 1.55;
-    }
-    .mentor-ty-card:nth-child(2) .mentor-ty-quote { color: #7c3aed; }
-    .mentor-ty-card:nth-child(3) .mentor-ty-quote { color: var(--green); }
-    .mentor-ty-card:nth-child(4) .mentor-ty-quote { color: var(--blue); }
-
     .cohort-thankyou {
       background: white; border-radius: var(--radius);
       padding: 2.5rem; box-shadow: var(--shadow);
       text-align: center; max-width: 700px; margin: 0 auto;
       border-top: 4px solid var(--pink);
     }
-    .cohort-thankyou h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; margin-bottom: 0.85rem;
-    }
-    .cohort-thankyou p { font-size: 0.925rem; line-height: 1.8; max-width: 560px; margin: 0 auto; }
+    .cohort-thankyou p { font-size: 1rem; line-height: 1.9; max-width: 620px; margin: 0 auto; }
 
     /* ── CLOSING ── */
     #closing {
@@ -1383,41 +1335,8 @@
       <h2 id="thankyou-heading">To the Mentors Who Showed Up Every Day</h2>
     </div>
 
-    <div class="thankyou-intro fade-in">
-      <p>They didn't have to do this. They had jobs, families, schedules, and lives. They showed up anyway — every morning at 7, every evening at 8, every Sunday for a weekly call — because they believed 240+ women builders were worth their time. This website is, in many ways, a thank-you letter. But some things deserve to be said out loud.</p>
-    </div>
-
-    <div class="mentor-cards-row">
-
-      <div class="mentor-ty-card fade-in">
-        <div class="mentor-ty-name">Karthi Subbaraman</div>
-        <p class="mentor-ty-message">You felt the overwhelm yourself, and instead of moving on, you turned it into a program. You poured every behavioral science principle you know into 66 days of structure. You walked every morning, used Wispr Flow, and still answered questions before 7 AM. You didn't give us fish — you taught us to fish, with AI, in our own lives. The Trust Index, the Think·Do·Articulate framework, the knife analogy, "come overwhelmed, leave unstoppable" — these are yours, and they changed how we think.</p>
-        <div class="mentor-ty-quote">"We're not here to give you a skill. We're here to give you a habit that outlives the cohort. The 66 days end. The thinking doesn't."</div>
-      </div>
-
-      <div class="mentor-ty-card fade-in">
-        <div class="mentor-ty-name">Mitalee</div>
-        <p class="mentor-ty-message">You brought the rigor. While the rest of the world was still asking "which model is best?", you were teaching us to write eval specs, think in scenarios, and build products grounded in real user intent. You were honest enough to say you had lost your critical thinking skills once to AI — and that honesty taught us more than any framework could. You made us better thinkers by being a better thinker in front of us.</p>
-        <div class="mentor-ty-quote">"AI PMs today have to focus on scenarios, rather than LLMs. I don't even look at hallucinations anymore."</div>
-      </div>
-
-      <div class="mentor-ty-card fade-in">
-        <div class="mentor-ty-name">Sindhu Kandipati</div>
-        <p class="mentor-ty-message">You were the grounding voice. When everyone was anxious about not knowing enough, you reminded us that it's okay to explore broadly before narrowing down — that the generalist-to-specialist path is a choice, not a failure. You taught us to ask probing questions, build learning plans, and connect our existing strengths to new skills. You made learning feel safe, not competitive.</p>
-        <div class="mentor-ty-quote">"It's impossible to know everything. Deciding whether you want to be a generalist or specialist can help you stay focused and avoid feeling left out."</div>
-      </div>
-
-      <div class="mentor-ty-card fade-in">
-        <div class="mentor-ty-name">Adi</div>
-        <p class="mentor-ty-message">You built the portal that held 54 days of learning. You answered questions with voice notes because typing felt too slow. You connected tools, shipped features in real time, and showed us by example that building small and iterating fast is not a compromise — it's the way. You also gave us Wispr Flow, introduced us to Claude Cowork, and made the Zone of Genius framework feel personal, not theoretical.</p>
-        <div class="mentor-ty-quote">"Start small. Like super small. It's so much fun, it's addictive."</div>
-      </div>
-
-    </div>
-
     <div class="cohort-thankyou fade-in">
-      <h3>And to the 240+ Women Builders of Cohort 0</h3>
-      <p>You showed up on Day 1 not knowing what was coming. You survived Week 1 when 40% don't. You wrote 2,317 reflections, kept 54-day streaks, asked questions in Office Hours at 7 AM and 7 PM, and built things that didn't exist before you started. You were the AND that Karthi wasn't sure would hold for 66 days. It held. <strong style="color:var(--text-dark);">You made it hold.</strong></p>
+      <p>A heartfelt thank you to <strong>Karthi Subbaraman</strong>, <strong>Mitalee</strong>, <strong>Sindhu Kandipati</strong>, and <strong>Adi</strong> — for showing up every morning at 7, every evening at 8, and every Sunday without fail. You didn't have to do this. You chose to. And that choice made all the difference.</p>
     </div>
   </div>
 </section>
