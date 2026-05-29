@@ -242,6 +242,93 @@
     .practice-text h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
     .practice-text p  { font-size: 0.82rem; }
 
+    /* ── ORIGIN STORY ── */
+    #story { background: var(--bg-dark); color: white; overflow: hidden; }
+    #story .section-tag { color: #f9a8d4; }
+    #story h2 { color: white; }
+    #story .section-header p { color: rgba(255,255,255,0.6); }
+
+    .story-intro {
+      max-width: 720px; margin: 0 auto 4rem;
+      text-align: center;
+    }
+    .story-intro p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.75);
+      line-height: 1.8; margin-bottom: 1rem;
+    }
+    .story-intro p strong { color: white; }
+    .story-intro .story-pull {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      font-style: italic; color: var(--pink);
+      line-height: 1.4; margin: 2rem 0;
+    }
+
+    .story-chapters { display: flex; flex-direction: column; gap: 0; max-width: 800px; margin: 0 auto; }
+    .chapter {
+      display: flex; gap: 2rem; align-items: flex-start;
+      padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      opacity: 0; transform: translateX(-20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .chapter.visible { opacity: 1; transform: translateX(0); }
+    .chapter:last-child { border-bottom: none; }
+    .chapter-dot {
+      flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(217,70,166,0.25), rgba(249,115,22,0.2));
+      border: 2px solid var(--pink); display: flex; align-items: center;
+      justify-content: center; font-size: 1.25rem; margin-top: 0.2rem;
+    }
+    .chapter-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: white; margin-bottom: 0.6rem;
+    }
+    .chapter-body p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.75;
+    }
+    .chapter-body p strong { color: rgba(255,255,255,0.9); }
+    .chapter-body blockquote {
+      border-left: 3px solid var(--pink);
+      padding-left: 1rem; margin-top: 0.85rem;
+      font-style: italic; color: #f9a8d4;
+      font-size: 0.88rem; line-height: 1.65;
+    }
+
+    .curriculum-strip {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .curriculum-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px; padding: 0.3rem 0.8rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.6);
+    }
+    .curriculum-chip.pink   { border-color: rgba(217,70,166,0.4); color: #f9a8d4; }
+    .curriculum-chip.orange { border-color: rgba(249,115,22,0.4);  color: #fdba74; }
+    .curriculum-chip.green  { border-color: rgba(16,185,129,0.4);  color: #6ee7b7; }
+    .curriculum-chip.blue   { border-color: rgba(59,130,246,0.4);  color: #93c5fd; }
+
+    .milestone-row {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .milestone-pill {
+      background: rgba(217,70,166,0.15);
+      border: 1px solid rgba(217,70,166,0.3);
+      border-radius: 12px; padding: 0.75rem 1.25rem;
+      text-align: center;
+    }
+    .milestone-pill .m-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700; color: var(--pink);
+      line-height: 1;
+    }
+    .milestone-pill .m-label {
+      font-size: 0.72rem; color: rgba(255,255,255,0.5);
+      margin-top: 0.2rem;
+    }
+
     /* ── CLOSING ── */
     #closing {
       background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
@@ -307,6 +394,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="main-nav" role="navigation" aria-label="Main navigation">
+      <a href="#story">Our Story</a>
       <a href="#wisdom">Mentor Wisdom</a>
       <a href="#frameworks">Frameworks</a>
       <a href="#insights">Key Insights</a>
@@ -338,6 +426,112 @@
     <div class="stat-card fade-in" role="listitem">
       <div class="stat-num">240+</div>
       <div class="stat-label">Community Members</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ORIGIN STORY ══════════════ -->
+<section id="story" aria-labelledby="story-heading">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag">The Journey</span>
+      <h2 id="story-heading">How I Found She Vibes — and Why It Changed Everything</h2>
+      <p style="color:rgba(255,255,255,0.6);">A participant's story. Written by Bharath S, She Vibes Cohort 0.</p>
+    </div>
+
+    <div class="story-intro fade-in">
+      <p>I was scrolling LinkedIn one afternoon, somewhere between overwhelmed and numb. AI announcements every hour. Courses everywhere. Another thread about agents, another about MCPs, another about the model that just dethroned the last model. I felt like I was standing at the edge of an ocean, being told to drink it all.</p>
+      <p class="story-pull">"AI content is an ocean right now. Brilliant, noisy, and relentless. Nobody needs more of it. You need a straw."</p>
+      <p>Then I saw Karthi's post. And it stopped me cold. <strong>She Vibes by PiFo is not a course.</strong></p>
+    </div>
+
+    <div class="story-chapters">
+
+      <div class="chapter">
+        <div class="chapter-dot" aria-hidden="true">🌊</div>
+        <div class="chapter-body">
+          <h3>The Overwhelm That Started It All</h3>
+          <p>Karthi had felt it too. She didn't pretend otherwise. <strong>"The AI era has been coming at me fast. I felt the overwhelm myself. And I realised how hard it is to just get started when the pace never slows down."</strong> That empathy — that honesty — is where Viber began. Not just AI. Not just learning. Not just community. All of it, together. A big AND equation where each part does the work the others cannot.</p>
+          <blockquote>"Learning how to learn AND learning AI AND a community AND joy in the process."</blockquote>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-dot" aria-hidden="true">🧪</div>
+        <div class="chapter-body">
+          <h3>Not a Course. A Behavior Change Program.</h3>
+          <p>The post explained something I hadn't seen anyone else say clearly: <strong>OpenAI, Anthropic, Google, Microsoft have all built AI courses. And they're amazing.</strong> She Vibes is something different. It is a 66-day structure. Every week has a spine. Every day inside that week wraps a little more muscle around it. Same direction. Deeper each time. One byte a day. This is how the brain actually learns — not in big crashes of information, but in slow, specific, compounding layers.</p>
+          <p style="margin-top:0.75rem;">Why 66 days? Because the research says it takes closer to 66 days for a new behavior to become <em style="color:#f9a8d4;">automatic</em>. Not forced. Not effortful. Just natural.</p>
+          <blockquote>"We're not here to give you a skill. We're here to give you a habit that outlives the cohort. The 66 days end. The thinking doesn't."</blockquote>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-dot" aria-hidden="true">🏗️</div>
+        <div class="chapter-body">
+          <h3>Built on Behavioral Science, Every Inch of It</h3>
+          <p>This was the first time Karthi poured every behavioral science principle she knows into a single program. A lot of big bets, stacked together. She wasn't sure the AND would hold for 66 days.</p>
+          <p style="margin-top:0.75rem;">But the design was deliberate: <strong>Attention span maxes out around 45 minutes a day</strong> — so they cut the lectures. <strong>Brains want to learn, not study</strong> — so they built experiences. <strong>People want a good deal</strong> — so they started free. <strong>Habits need time</strong> — so 66 days, with each day building on the last through progressive overload. <strong>And daily reflection</strong>, because learners have to connect their own dots.</p>
+          <blockquote>"You don't feel overwhelmed because nothing is vague. You know exactly what you're doing today. And it connects to everything before it. Day 7 only makes sense if Days 1 through 6 have done their job."</blockquote>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-dot" aria-hidden="true">📅</div>
+        <div class="chapter-body">
+          <h3>The 66-Day Map — Built Before a Single Person Joined</h3>
+          <p>What got me was this: <strong>Karthi had built the entire 66-day calendar before opening the doors.</strong> Every day named. Every week intentional. This wasn't improvisation — it was architecture. And she shared it publicly, chips on the table. She wanted a small pilot of 24 seats. Demand pushed it to 10x.</p>
+          <div class="curriculum-strip">
+            <span class="curriculum-chip pink">Week 0: Onboarding</span>
+            <span class="curriculum-chip pink">Day 2: It's Not Magic, It's Math</span>
+            <span class="curriculum-chip pink">Day 3: The 70-Year Journey</span>
+            <span class="curriculum-chip pink">Day 4: How AI Reads You</span>
+            <span class="curriculum-chip pink">Day 5: The Prediction Machine</span>
+            <span class="curriculum-chip pink">Day 6: Training &amp; Fine-tuning</span>
+            <span class="curriculum-chip pink">Day 7: The Layers You Never See</span>
+            <span class="curriculum-chip orange">Week 2: Prompt Engineering</span>
+            <span class="curriculum-chip orange">Day 9: What Is a Prompt?</span>
+            <span class="curriculum-chip orange">Day 10: Simple Prompts That Work</span>
+            <span class="curriculum-chip orange">Day 11: Role, Context, Task</span>
+            <span class="curriculum-chip orange">Day 12: When It Gets It Wrong</span>
+            <span class="curriculum-chip orange">Day 13: Complex Prompts</span>
+            <span class="curriculum-chip green">Week 3: Context Engineering</span>
+            <span class="curriculum-chip green">Day 16: What Is Context?</span>
+            <span class="curriculum-chip green">Day 17: Connecting AI to Your Work</span>
+            <span class="curriculum-chip green">Day 18: What Is an MCP?</span>
+            <span class="curriculum-chip green">Day 19: Your First Integration</span>
+            <span class="curriculum-chip green">Day 21: RAG and Beyond</span>
+            <span class="curriculum-chip blue">Week 4: AI Agents</span>
+            <span class="curriculum-chip blue">Day 23: What Is an AI Agent?</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-dot" aria-hidden="true">🔥</div>
+        <div class="chapter-body">
+          <h3>Day 30: One Third In — and the AND Was Holding</h3>
+          <p>I remember reading Karthi's Day 30 update and feeling something shift. She wasn't celebrating numbers — she was celebrating <em style="color:#f9a8d4;">signal</em>.</p>
+          <div class="milestone-row">
+            <div class="milestone-pill"><div class="m-num">2,317</div><div class="m-label">Reflections logged</div></div>
+            <div class="milestone-pill"><div class="m-num">32</div><div class="m-label">Not missed a single day</div></div>
+            <div class="milestone-pill"><div class="m-num">18%</div><div class="m-label">Unbroken through Week 4</div></div>
+          </div>
+          <p style="margin-top:1rem;"><strong>"But the real signal is not in the dashboards. It is in the WhatsApp threads, the Padlet, the weekly calls. The community is alive. The joy is showing up. The AND is holding."</strong></p>
+          <p style="margin-top:0.75rem;">And then the announcement that made everything feel like it was just getting started: <em style="color:#fdba74;">"We have crossed AI for consumers. In the next four weeks, we move into AI for builders."</em></p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-dot" aria-hidden="true">✨</div>
+        <div class="chapter-body">
+          <h3>Come Overwhelmed. Leave Unstoppable.</h3>
+          <p>That was the promise. Five words at the end of the LinkedIn post that I screenshot and kept on my phone. I came in not knowing where the AI ocean ended. I came in scared of being left behind. I came in unsure whether I was the right kind of person for this.</p>
+          <p style="margin-top:0.75rem;">Sixty-six days later, I understand that the overwhelm was never the enemy. It was just the entry point. And She Vibes was the straw.</p>
+          <blockquote>"By the time we're done, building and thinking with AI isn't something you do. It's something you are."</blockquote>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -896,7 +1090,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in, .chapter').forEach(el => observer.observe(el));
 
   // ── Active nav link on scroll ──
   const sections = document.querySelectorAll('section[id]');
