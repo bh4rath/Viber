@@ -242,6 +242,91 @@
     .practice-text h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
     .practice-text p  { font-size: 0.82rem; }
 
+    /* ── CURRICULUM ── */
+    #curriculum { background: var(--bg-white); }
+    .curriculum-stats {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    .cs-pill {
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 1rem 1.75rem; text-align: center;
+      border-top: 3px solid var(--pink);
+    }
+    .cs-pill:nth-child(2) { border-top-color: var(--orange); }
+    .cs-pill:nth-child(3) { border-top-color: var(--green); }
+    .cs-pill:nth-child(4) { border-top-color: var(--blue); }
+    .cs-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700; color: var(--pink); line-height: 1;
+    }
+    .cs-pill:nth-child(2) .cs-num { color: var(--orange); }
+    .cs-pill:nth-child(3) .cs-num { color: var(--green); }
+    .cs-pill:nth-child(4) .cs-num { color: var(--blue); }
+    .cs-label { font-size: 0.75rem; color: var(--text-light); margin-top: 0.25rem; font-weight: 500; }
+
+    .weeks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .week-card {
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .week-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .week-header {
+      padding: 1.1rem 1.4rem;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: white;
+    }
+    .week-card:nth-child(2) .week-header { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+    .week-card:nth-child(3) .week-header { background: linear-gradient(135deg, var(--orange), #ea580c); }
+    .week-card:nth-child(4) .week-header { background: linear-gradient(135deg, var(--green), #059669); }
+    .week-card:nth-child(5) .week-header { background: linear-gradient(135deg, var(--blue), #1d4ed8); }
+    .week-card:nth-child(6) .week-header { background: linear-gradient(135deg, #0891b2, #0e7490); }
+    .week-card:nth-child(7) .week-header { background: linear-gradient(135deg, #d97706, #b45309); }
+    .week-card:nth-child(8) .week-header { background: linear-gradient(135deg, #dc2626, #991b1b); }
+    .week-card:nth-child(9) .week-header { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+
+    .week-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; opacity: 0.8; margin-bottom: 0.2rem;
+    }
+    .week-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; line-height: 1.25;
+    }
+    .week-theme {
+      font-size: 0.78rem; opacity: 0.85; margin-top: 0.3rem; line-height: 1.4;
+    }
+    .week-days {
+      background: white; padding: 1rem 1.4rem;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .day-row {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      padding: 0.45rem 0; border-bottom: 1px solid #f3f4f6;
+      font-size: 0.82rem;
+    }
+    .day-row:last-child { border-bottom: none; }
+    .day-num {
+      flex-shrink: 0; font-weight: 700; color: var(--pink);
+      font-size: 0.72rem; min-width: 38px;
+    }
+    .week-card:nth-child(2) .day-num { color: #7c3aed; }
+    .week-card:nth-child(3) .day-num { color: var(--orange); }
+    .week-card:nth-child(4) .day-num { color: var(--green); }
+    .week-card:nth-child(5) .day-num { color: var(--blue); }
+    .week-card:nth-child(6) .day-num { color: #0891b2; }
+    .week-card:nth-child(7) .day-num { color: #d97706; }
+    .week-card:nth-child(8) .day-num { color: #dc2626; }
+    .week-card:nth-child(9) .day-num { color: #7c3aed; }
+    .day-title { color: var(--text-dark); font-weight: 500; flex: 1; line-height: 1.35; }
+    .day-check { flex-shrink: 0; color: #10b981; font-size: 0.75rem; }
+    .day-row.reflection .day-title { font-style: italic; color: var(--text-light); }
+
     /* ── ORIGIN STORY ── */
     #story { background: var(--bg-dark); color: white; overflow: hidden; }
     #story .section-tag { color: #f9a8d4; }
@@ -395,6 +480,7 @@
     </button>
     <nav id="main-nav" role="navigation" aria-label="Main navigation">
       <a href="#story">Our Story</a>
+      <a href="#curriculum">66 Days</a>
       <a href="#wisdom">Mentor Wisdom</a>
       <a href="#frameworks">Frameworks</a>
       <a href="#insights">Key Insights</a>
@@ -529,6 +615,184 @@
           <p>That was the promise. Five words at the end of the LinkedIn post that I screenshot and kept on my phone. I came in not knowing where the AI ocean ended. I came in scared of being left behind. I came in unsure whether I was the right kind of person for this.</p>
           <p style="margin-top:0.75rem;">Sixty-six days later, I understand that the overwhelm was never the enemy. It was just the entry point. And She Vibes was the straw.</p>
           <blockquote>"By the time we're done, building and thinking with AI isn't something you do. It's something you are."</blockquote>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CURRICULUM ══════════════ -->
+<section id="curriculum" aria-labelledby="curriculum-heading">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag">The Curriculum</span>
+      <h2 id="curriculum-heading">54 Days. 8 Weeks. One Transformation.</h2>
+      <p>Every day was intentional. Every week built on the last. Here is everything we covered — week by week — as a testament to what 240+ women builders committed to and completed.</p>
+    </div>
+
+    <div class="curriculum-stats fade-in">
+      <div class="cs-pill"><div class="cs-num">54</div><div class="cs-label">Days Completed</div></div>
+      <div class="cs-pill"><div class="cs-num">8</div><div class="cs-label">Weeks of Learning</div></div>
+      <div class="cs-pill"><div class="cs-num">54</div><div class="cs-label">Day Streak</div></div>
+      <div class="cs-pill"><div class="cs-num">12</div><div class="cs-label">Days Remaining</div></div>
+    </div>
+
+    <div class="weeks-grid">
+
+      <!-- WEEK 0 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 0 · 1 Day</div>
+          <div class="week-title">Onboarding</div>
+          <div class="week-theme">The She Vibes philosophy. Why this cohort exists. The learning contract.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 1</span><span class="day-title">Onboarding</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 1 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 1 · 7 Days</div>
+          <div class="week-title">AI Foundations</div>
+          <div class="week-theme">From black box to mental model. 70 years of math, finally understood.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 2</span><span class="day-title">It's Not Magic. It's Math.</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 3</span><span class="day-title">The Seventy Year Journey</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 4</span><span class="day-title">How AI Actually Reads You</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 5</span><span class="day-title">The Prediction Machine</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 6</span><span class="day-title">Training, Fine-tuning, and You</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 7</span><span class="day-title">The Layers You Never See</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 8</span><span class="day-title">Reflection: Week 1</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 2 · 7 Days</div>
+          <div class="week-title">Prompt Engineering</div>
+          <div class="week-theme">From passenger to driver. Role, Context, Task. The art of talking to AI.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 9</span><span class="day-title">What is a Prompt?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 10</span><span class="day-title">Simple Prompts That Work</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 11</span><span class="day-title">Role, Context, Task</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 12</span><span class="day-title">When It Gets It Wrong</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 13</span><span class="day-title">Complex Prompts for Complex Tasks</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 14</span><span class="day-title">Prompting Across Tools</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 15</span><span class="day-title">Reflection: Week 2</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 3 · 7 Days</div>
+          <div class="week-title">Context Engineering</div>
+          <div class="week-theme">APIs, MCPs, integrations, RAG. From chat tool to working partner.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 16</span><span class="day-title">What is Context?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 17</span><span class="day-title">Connecting AI to Your World</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 18</span><span class="day-title">What is an MCP?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 19</span><span class="day-title">Building Your First Integration</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 20</span><span class="day-title">Context in Practice</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 21</span><span class="day-title">RAG and Beyond</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 22</span><span class="day-title">Reflection: Week 3</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 4 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 4 · 7 Days</div>
+          <div class="week-title">AI Agents</div>
+          <div class="week-theme">From tool to colleague. ReAct loops, multi-agent systems, guardrails.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 23</span><span class="day-title">What is an AI Agent?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 24</span><span class="day-title">How Agents Work</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 25</span><span class="day-title">Your First Agent</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 26</span><span class="day-title">Agent Use Cases</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 27</span><span class="day-title">Multi-Agent Systems</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 28</span><span class="day-title">When Agents Go Wrong</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 29</span><span class="day-title">Reflection: Week 4</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 5 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 5 · 7 Days</div>
+          <div class="week-title">Planning &amp; Building</div>
+          <div class="week-theme">Pick your path. Feasibility, ethics, architecture, planning with AI.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 30</span><span class="day-title">Pick Your Path</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 31</span><span class="day-title">Can I Build This?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 32</span><span class="day-title">Should I Build This?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 33</span><span class="day-title">Architecture Thinking</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 34</span><span class="day-title">Planning With AI</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 35</span><span class="day-title">The Terminal Revisited</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 36</span><span class="day-title">Reflection: Week 5</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 6 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 6 · 7 Days</div>
+          <div class="week-title">Building</div>
+          <div class="week-theme">First line of code. React, Node, Python. Frontend, backend, APIs, databases.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 37</span><span class="day-title">Your First Build</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 38</span><span class="day-title">React, Node, Python — Demystified</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 39</span><span class="day-title">Frontend vs Backend</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 40</span><span class="day-title">APIs: How Things Talk to Each Other</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 41</span><span class="day-title">Debugging With AI</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 42</span><span class="day-title">Databases 101</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 43</span><span class="day-title">Reflection: Week 6</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 7 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 7 · 7 Days</div>
+          <div class="week-title">Shipping</div>
+          <div class="week-theme">Git, GitHub, Vercel, domains, secrets. Your project gets a URL.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 44</span><span class="day-title">What is Git?</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 45</span><span class="day-title">GitHub Basics</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 46</span><span class="day-title">Deploying Your First Project</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 47</span><span class="day-title">Domains and DNS</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 48</span><span class="day-title">Environment Variables and Secrets</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 49</span><span class="day-title">Shipping is a Mindset</span><span class="day-check">✓</span></div>
+          <div class="day-row reflection"><span class="day-num">Day 50</span><span class="day-title">Reflection: Week 7</span><span class="day-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- WEEK 8 -->
+      <div class="week-card fade-in">
+        <div class="week-header">
+          <div class="week-label">Week 8 · In Progress</div>
+          <div class="week-title">Collaboration</div>
+          <div class="week-theme">Branches, pull requests, documentation, AI in teams, owning what you ship.</div>
+        </div>
+        <div class="week-days">
+          <div class="day-row"><span class="day-num">Day 51</span><span class="day-title">Building With Others</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 52</span><span class="day-title">Communicating Your Architecture</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 53</span><span class="day-title">AI in the Team</span><span class="day-check">✓</span></div>
+          <div class="day-row"><span class="day-num">Day 54</span><span class="day-title">Reviewing AI-Generated Code</span><span class="day-check">✓</span></div>
+          <div class="day-row" style="opacity:0.4"><span class="day-num">Day 55</span><span class="day-title">Coming soon…</span></div>
+          <div class="day-row" style="opacity:0.4"><span class="day-num">Day 56</span><span class="day-title">Coming soon…</span></div>
+          <div class="day-row reflection" style="opacity:0.4"><span class="day-num">Day 57</span><span class="day-title">Reflection: Week 8</span></div>
         </div>
       </div>
 
