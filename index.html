@@ -76,37 +76,6 @@
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text-dark); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, #fff0f9 0%, #fff7f0 50%, #f0f9ff 100%);
-      padding: 6rem 2rem 4rem;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #fce7f3, #fff7ed);
-      color: var(--pink-dark);
-      font-size: 0.8rem; font-weight: 600;
-      padding: 0.4rem 1rem; border-radius: 999px;
-      border: 1px solid #fbcfe8;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 { max-width: 800px; margin: 0 auto 1.25rem; }
-    .hero h1 span { color: var(--pink); }
-    .hero-sub {
-      font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem;
-      color: var(--text-light);
-    }
-    .hero-cta {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
-      color: white; font-weight: 600; font-size: 0.95rem;
-      padding: 0.8rem 2rem; border-radius: 999px;
-      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(217,70,166,0.35);
-    }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(217,70,166,0.45); }
-
     /* ── WHAT IS SHE VIBES ── */
     #whatisshevibes { background: white; }
 
@@ -527,7 +496,7 @@
       nav { display: none; }
       nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 1rem; border-bottom: 1px solid #f0e6f0; box-shadow: var(--shadow); }
       .nav-toggle { display: block; }
-      .hero { padding: 4rem 1.25rem 3rem; }
+
       section { padding: 3.5rem 1.25rem; }
       .cards-grid { grid-template-columns: 1fr; }
     }
@@ -557,18 +526,6 @@
     </nav>
   </div>
 </header>
-
-<!-- ══════════════ HERO ══════════════ -->
-<section class="hero" role="main" aria-labelledby="hero-heading">
-  <div class="hero-badge">66 Days · AI Learning Cohort · 2026</div>
-  <h1 id="hero-heading">
-    <span>She Vibes</span> Mentor Wisdom<br>&amp; Frameworks
-  </h1>
-  <p class="hero-sub">
-    A tribute to 240+ women builders who spent 66 days learning, building, and growing with AI — guided by mentors who gave freely of their wisdom every single day.
-  </p>
-  <a href="#wisdom" class="hero-cta">Explore the Wisdom</a>
-</section>
 
 <!-- ══════════════ WHAT IS SHE VIBES ══════════════ -->
 <section id="whatisshevibes" aria-labelledby="wisvs-heading">
