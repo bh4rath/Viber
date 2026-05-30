@@ -107,6 +107,101 @@
     }
     .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(217,70,166,0.45); }
 
+    /* ── WHAT IS SHE VIBES ── */
+    #whatisshevibes { background: white; }
+
+    .wisvs-problem {
+      display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 2.5rem; margin-bottom: 3rem;
+    }
+    .wisvs-problem-text { flex: 1; min-width: 240px; }
+    .wisvs-problem-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; margin-bottom: 0.75rem;
+    }
+    .wisvs-problem-text p { font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-top: 0.5rem; }
+    .wisvs-straw {
+      flex: 0 0 auto; text-align: center;
+      background: white; border-radius: var(--radius);
+      padding: 1.75rem 2.5rem; box-shadow: var(--shadow);
+      border-top: 4px solid var(--pink);
+    }
+    .wisvs-straw-label { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.35rem; }
+    .wisvs-straw-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 700; color: var(--pink);
+    }
+
+    .wisvs-design-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem; margin-bottom: 3.5rem;
+    }
+    .wisvs-design-card {
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 2rem; border-left: 4px solid var(--pink);
+    }
+    .wisvs-design-card:nth-child(2) { border-left-color: var(--orange); }
+    .wisvs-design-card:nth-child(3) { border-left-color: var(--green); }
+    .wisvs-design-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700; color: var(--pink);
+      line-height: 1; margin-bottom: 0.5rem;
+    }
+    .wisvs-design-card:nth-child(2) .wisvs-design-num { color: var(--orange); }
+    .wisvs-design-card:nth-child(3) .wisvs-design-num { color: var(--green); }
+    .wisvs-design-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.55rem; color: var(--text-dark); }
+    .wisvs-design-card p { font-size: 0.875rem; color: var(--text-light); line-height: 1.7; }
+
+    .wisvs-subheader { text-align: center; margin-bottom: 1.5rem; }
+    .wisvs-subheader h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+
+    .wisvs-get-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem; margin-bottom: 3.5rem;
+    }
+    .wisvs-get-card {
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+    }
+    .wisvs-get-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.45rem; color: var(--text-dark); }
+    .wisvs-get-card p { font-size: 0.875rem; color: var(--text-light); line-height: 1.65; }
+
+    .wisvs-promise {
+      background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+      border-radius: var(--radius); padding: 3rem 2.5rem;
+      text-align: center; color: white; margin-bottom: 1.5rem;
+    }
+    .wisvs-promise-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; opacity: 0.8; margin-bottom: 0.7rem;
+    }
+    .wisvs-promise-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700;
+      color: white; margin: 0 0 1.5rem; border: none; padding: 0;
+      background: none;
+    }
+    .wisvs-promise-outcomes {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
+    }
+    .wisvs-promise-outcomes span {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px; padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    .wisvs-free {
+      background: var(--bg-light); border-radius: var(--radius);
+      padding: 1.4rem 1.75rem; text-align: center;
+      font-size: 0.9rem; color: var(--text-light); line-height: 1.75;
+      border-left: 4px solid var(--pink);
+    }
+    .wisvs-free strong { color: var(--text-dark); }
+
     /* ── SECTIONS ── */
     section { padding: 5rem 2rem; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -452,6 +547,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="main-nav" role="navigation" aria-label="Main navigation">
+      <a href="#whatisshevibes">She Vibes</a>
       <a href="#story">Our Story</a>
       <a href="#curriculum">66 Days</a>
       <a href="#wisdom">Mentor Wisdom</a>
@@ -472,6 +568,86 @@
     A tribute to 240+ women builders who spent 66 days learning, building, and growing with AI — guided by mentors who gave freely of their wisdom every single day.
   </p>
   <a href="#wisdom" class="hero-cta">Explore the Wisdom</a>
+</section>
+
+<!-- ══════════════ WHAT IS SHE VIBES ══════════════ -->
+<section id="whatisshevibes" aria-labelledby="wisvs-heading">
+  <div class="section-inner">
+
+    <div class="section-header fade-in">
+      <span class="section-tag">What is She Vibes?</span>
+      <h2 id="wisvs-heading">Not a Course. A Behavior Change Program.</h2>
+      <p>OpenAI, Anthropic, Google, Microsoft — they've all built amazing AI courses. She Vibes is something different. A 66-day structure designed by behavioral science. One sip. Every day. At the pace your brain was actually built for.</p>
+    </div>
+
+    <div class="wisvs-problem fade-in">
+      <div class="wisvs-problem-text">
+        <h3>The Problem She Vibes Solves</h3>
+        <p>AI content is an ocean right now. Brilliant, noisy, and relentless. Everyone's talking about it. Every hour brings another breakthrough. Another course. Another "you must learn this or be left behind."</p>
+        <p>You feel overwhelmed. Paralyzed by the vastness.</p>
+      </div>
+      <div class="wisvs-straw">
+        <div class="wisvs-straw-label">You don't need more ocean.</div>
+        <div class="wisvs-straw-big">You need a straw.</div>
+      </div>
+    </div>
+
+    <div class="wisvs-design-grid">
+      <div class="wisvs-design-card fade-in">
+        <div class="wisvs-design-num">66</div>
+        <h4>Days for a Reason</h4>
+        <p>Research shows it takes 66 days for a new behavior to become automatic — not forced, not effortful, just natural. By Day 66, building and thinking with AI isn't something you do. It's something you are.</p>
+      </div>
+      <div class="wisvs-design-card fade-in">
+        <div class="wisvs-design-num">1→</div>
+        <h4>Every Day Connects</h4>
+        <p>You know exactly what you're learning today. And it connects to everything before it. Day 7 only makes sense if Days 1 through 6 did their job. This is behavioral science at work — nothing is vague, nothing is random.</p>
+      </div>
+      <div class="wisvs-design-card fade-in">
+        <div class="wisvs-design-num">2×</div>
+        <h4>Progressive Complexity</h4>
+        <p><strong>Weeks 1–4:</strong> Foundations — math, prompting, integration, agents.<br><strong>Weeks 5–8:</strong> Building — plan, code, deploy, collaborate. Each week builds on the last. You're never drowning.</p>
+      </div>
+    </div>
+
+    <div class="wisvs-subheader fade-in">
+      <h3>What You Get</h3>
+    </div>
+    <div class="wisvs-get-grid">
+      <div class="wisvs-get-card fade-in">
+        <h4>One Focused Lesson Every Week</h4>
+        <p>Structured progression from math to agents to shipping. No fluff. Every lesson connects to the next.</p>
+      </div>
+      <div class="wisvs-get-card fade-in">
+        <h4>One Practical Nugget Every Day</h4>
+        <p>Not 5 hours of content. One clear idea. One actionable insight. Enough to sit with, practice, and integrate.</p>
+      </div>
+      <div class="wisvs-get-card fade-in">
+        <h4>Mentors Living It Alongside You</h4>
+        <p>Karthi, Mitalee, Sindhu, and Adi are in the AI era right now — not experts talking about a world they left behind. They show up every day. Osmosis learning.</p>
+      </div>
+      <div class="wisvs-get-card fade-in">
+        <h4>A Community That Shows Up</h4>
+        <p>240+ women learning together. Sharing breakthroughs. Getting unstuck in WhatsApp threads. Sunday calls. You're not alone in the overwhelm.</p>
+      </div>
+    </div>
+
+    <div class="wisvs-promise fade-in">
+      <div class="wisvs-promise-label">The Promise</div>
+      <div class="wisvs-promise-quote">Come overwhelmed. Leave unstoppable.</div>
+      <div class="wisvs-promise-outcomes">
+        <span>A daily habit of thinking with AI</span>
+        <span>A clear mental model of how AI works</span>
+        <span>Confidence to build real things</span>
+        <span>A community building alongside you</span>
+      </div>
+    </div>
+
+    <div class="wisvs-free fade-in">
+      <strong>This is free.</strong> Built by PiFo — a non-profit for product innovators — as a labs experiment. A founding cohort that became 240 because the need was real. Because Karthi got tired of watching women be overwhelmed. Because someone needed to build the straw.
+    </div>
+
+  </div>
 </section>
 
 <!-- ══════════════ ORIGIN STORY ══════════════ -->
