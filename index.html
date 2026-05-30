@@ -229,6 +229,112 @@
     .wisdom-card.green  .card-quote { border-left-color: #6ee7b7; }
     .wisdom-card.blue   .card-quote { border-left-color: #93c5fd; }
 
+    /* ── COMMUNITY VOICES ── */
+    #community { background: var(--bg-light); }
+    #community .section-header p { max-width: 640px; margin: 0 auto; }
+
+    .community-category {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--pink);
+      margin: 3rem 0 1.25rem; text-align: center;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem; margin-bottom: 0.5rem;
+    }
+    .cq-card {
+      background: white; border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: var(--shadow);
+      border-left: 4px solid var(--pink);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .cq-card:nth-child(2) { border-left-color: var(--orange); }
+    .cq-card:nth-child(3) { border-left-color: var(--green); }
+    .cq-card:nth-child(4) { border-left-color: var(--blue); }
+    .cq-card:nth-child(5) { border-left-color: #7c3aed; }
+    .cq-card:nth-child(6) { border-left-color: var(--orange); }
+    .cq-text {
+      font-size: 0.9rem; line-height: 1.75; color: var(--text-dark);
+      font-style: italic;
+    }
+    .cq-attribution {
+      font-size: 0.78rem; font-weight: 600; color: var(--text-light);
+      margin-top: auto;
+    }
+
+    .community-featured {
+      background: white; border-radius: var(--radius);
+      padding: 2rem 2.5rem; box-shadow: var(--shadow);
+      border-top: 4px solid var(--pink-dark);
+      margin-bottom: 0.5rem;
+      max-width: 780px; margin-left: auto; margin-right: auto;
+    }
+    .community-featured blockquote {
+      font-size: 1rem; line-height: 1.8; color: var(--text-dark);
+      font-style: italic; border: none; background: none;
+      padding: 0; margin: 0 0 0.6rem;
+    }
+    .community-featured .cq-attribution { display: block; }
+
+    .community-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem; margin-bottom: 0.5rem;
+    }
+    .cp-card {
+      background: white; border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: var(--shadow);
+    }
+    .cp-card-title {
+      font-weight: 700; font-size: 0.9rem; color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+    .cp-card p {
+      font-size: 0.875rem; color: var(--text-light);
+      line-height: 1.7; font-style: italic;
+    }
+    .cp-card .cq-attribution { margin-top: 0.75rem; }
+
+    .community-numbers {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      justify-content: center; margin: 3rem 0 2rem;
+    }
+    .cn-pill {
+      background: white; border-radius: var(--radius);
+      padding: 1.25rem 1.75rem; box-shadow: var(--shadow);
+      text-align: center; min-width: 130px;
+      border-top: 3px solid var(--pink);
+    }
+    .cn-pill:nth-child(2) { border-top-color: var(--orange); }
+    .cn-pill:nth-child(3) { border-top-color: var(--green); }
+    .cn-pill:nth-child(4) { border-top-color: var(--blue); }
+    .cn-pill:nth-child(5) { border-top-color: #7c3aed; }
+    .cn-pill:nth-child(6) { border-top-color: var(--pink-dark); }
+    .cn-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; font-weight: 700; color: var(--pink);
+      line-height: 1;
+    }
+    .cn-pill:nth-child(2) .cn-num { color: var(--orange); }
+    .cn-pill:nth-child(3) .cn-num { color: var(--green); }
+    .cn-pill:nth-child(4) .cn-num { color: var(--blue); }
+    .cn-pill:nth-child(5) .cn-num { color: #7c3aed; }
+    .cn-pill:nth-child(6) .cn-num { color: var(--pink-dark); }
+    .cn-label { font-size: 0.75rem; color: var(--text-light); margin-top: 0.3rem; font-weight: 500; }
+
+    .community-closing {
+      background: var(--bg-dark); color: white;
+      border-radius: var(--radius); padding: 2.5rem;
+      text-align: center; margin-top: 1rem;
+    }
+    .community-closing p {
+      font-size: 1rem; line-height: 1.8; max-width: 640px;
+      margin: 0 auto 0.6rem; color: rgba(255,255,255,0.85);
+    }
+    .community-closing strong { color: white; }
+
     /* ── FRAMEWORKS ── */
     #frameworks { background: white; }
     .framework-card {
@@ -519,6 +625,7 @@
       <a href="#whatisshevibes">She Vibes</a>
       <a href="#story">Our Story</a>
       <a href="#curriculum">66 Days</a>
+      <a href="#community">Community</a>
       <a href="#wisdom">Mentor Wisdom</a>
       <a href="#frameworks">Frameworks</a>
       <a href="#insights">Key Insights</a>
@@ -865,6 +972,152 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ══════════════ COMMUNITY VOICES ══════════════ -->
+<section id="community" aria-labelledby="community-heading">
+  <div class="section-inner">
+
+    <div class="section-header fade-in">
+      <span class="section-tag">240+ Voices</span>
+      <h2 id="community-heading">What 66 Days Did to Real People</h2>
+      <p>240+ women showed up. 240+ journeys happened. Here are the real breakthroughs, struggles, insights, and transformations — in their own words.</p>
+    </div>
+
+    <!-- AHA MOMENTS -->
+    <div class="community-category fade-in">Aha Moments — When Understanding Shifted</div>
+    <div class="community-grid">
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"This has been the longest I've studied continuously since my school days. I've realized that I truly love the process of learning when the subject resonates with me. The structure of this week has been my saving grace — by moving step-by-step up a ladder, I've avoided the overwhelming rabbit holes I usually fall into."</p>
+        <span class="cq-attribution">Richa Pal · Dehradun</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"I went from thinking AI reads and understands meaning, to realizing it reads tokens converted to numbers. Understanding tokenization shifted everything. Now I understand why hallucinations happen — it's not a glitch, it's structural. AI predicts the next plausible token, not the true answer."</p>
+        <span class="cq-attribution">Soorya · Bangalore</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"My biggest aha moment was when my whole fear and reverence around LLMs was demystified. Understanding that AI does predictions and is not a search engine was huge. Knowing it could hallucinate very confidently — all of these were aha moments for me."</p>
+        <span class="cq-attribution">Elesha · Mumbai</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"Until now, I was treating the interaction like asking a person a question. But understanding that AI reads tokens and patterns, not meaning, made me see that I'm actually prompting — shaping an input from which a response emerges. That changed the role I play in the interaction."</p>
+        <span class="cq-attribution">From the Community Reflections</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"My aha moment is learning that AI is not reasoning or thinking but is simply calculating the next best match. Understanding this fundamentally changed how I approach using it. I'm more thoughtful about when to use AI and when not to."</p>
+        <span class="cq-attribution">A QA Engineer's Perspective</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"Before Week 1, I thought AI was a black box I could never open. Now I know it's a structured, logical system — built on math I can actually learn. And then almost the opposite: AI is deeply human, shaped by the people who built it, carrying their assumptions, their blind spots, their biases."</p>
+        <span class="cq-attribution">From Week 1 Reflection</span>
+      </div>
+
+    </div>
+
+    <!-- THE STRUGGLE -->
+    <div class="community-category fade-in">The Struggle Was Real — And That Was Okay</div>
+    <div class="community-grid">
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"I have a genuine fear of oversharing data. The idea of one place having an entire picture of me is scary. This keeps me from integrating AI into a lot of stuff. Do any of you suffer from this?"</p>
+        <span class="cq-attribution">Manasvi Madan</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"I got overwhelmed thinking I needed to build a full application. But then I learned: don't build an app. Your MVP is a structured process powered by Claude. Google Form + Sheet + prompt + your insight document. You are the engine for now. That's fine."</p>
+        <span class="cq-attribution">A Healthcare Designer's Pivot</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"VSCode and Terminal can make your head spin a bit. Stay with it. You are learning new things and it is important to go past the discomfort."</p>
+        <span class="cq-attribution">A Frontend Designer</span>
+      </div>
+
+    </div>
+
+    <!-- REAL PROJECTS -->
+    <div class="community-category fade-in">From Theory to Real Building</div>
+    <div class="community-projects-grid">
+
+      <div class="cp-card fade-in">
+        <div class="cp-card-title">TinyTutor — Shipped to Production</div>
+        <p>"I recently launched TinyTutor, a micro-learning app I built and shipped — reminded me why I love building. Not just the product, but the messy, exciting process of making something from nothing."</p>
+        <span class="cq-attribution">Soundarya · Mexico</span>
+      </div>
+
+      <div class="cp-card fade-in">
+        <div class="cp-card-title">Journal Match Finder — For Researchers</div>
+        <p>"Yesterday the first feature — a query and response — worked well on the terminal. My dream feature is to fetch all journal info in realtime and find a match for any article. I struggled, learned, pivoted, and kept building."</p>
+        <span class="cq-attribution">A Research PM</span>
+      </div>
+
+      <div class="cp-card fade-in">
+        <div class="cp-card-title">5-Minute Story App for Kids</div>
+        <p>"I have built HTML pages and a landing page. Now I'm learning about backends like Supabase. This is so exciting!"</p>
+        <span class="cq-attribution">A She Vibes Builder</span>
+      </div>
+
+    </div>
+
+    <!-- CRITICAL REALIZATIONS -->
+    <div class="community-category fade-in">Critical Realizations</div>
+    <div class="community-featured fade-in">
+      <blockquote>"The model was trained on 'What comes next?' It outputs high-probability tokens that sound like a real statistic, even though the study is fabricated. This is why hallucinations aren't bugs — they're features of how it was designed."</blockquote>
+    </div>
+    <div class="community-featured fade-in" style="margin-top:1rem;">
+      <blockquote>"The question I'm still sitting with is: if both AI and I rely on pattern recognition in different ways, how do I know when my own intuition is insight and when it is just a well-formed hallucination?"</blockquote>
+    </div>
+
+    <!-- UNEXPECTED GIFTS -->
+    <div class="community-category fade-in">The Unexpected Gifts</div>
+    <div class="community-grid">
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"More than learning AI, I am learning the habit of learning, reading, submitting, and reflecting. Something I have never done for a long time now. I really appreciate the commitment, discipline, and consistency."</p>
+        <span class="cq-attribution">Kinjal · New Jersey</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"I'm currently on maternity leave and feeling behind with the pace at which the industry is taking up AI. This cohort will help me feel confident when I return back to work!"</p>
+        <span class="cq-attribution">Preeti · On Maternity Leave</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"The highlight of my week happened when a peer asked a question, and I was able to explain the logic behind it. Having a mentor validate that I got the point right made me feel like I was on top of the world."</p>
+        <span class="cq-attribution">From a Peer Learning Moment</span>
+      </div>
+
+      <div class="cq-card fade-in">
+        <p class="cq-text">"Community hugely adds to confidence levels because support, context, and perspectives of understanding expand multiple folds. Reading all your intros was like seeing how many of us enjoy cooking our own meals — there's something really grounding about staying connected to something as simple and real as food."</p>
+        <span class="cq-attribution">Richa Pal · Dehradun</span>
+      </div>
+
+    </div>
+
+    <!-- NUMBERS -->
+    <div class="community-numbers">
+      <div class="cn-pill fade-in"><div class="cn-num">240+</div><div class="cn-label">Women Builders</div></div>
+      <div class="cn-pill fade-in"><div class="cn-num">2,317</div><div class="cn-label">Reflections Logged</div></div>
+      <div class="cn-pill fade-in"><div class="cn-num">32</div><div class="cn-label">Unbroken Streaks</div></div>
+      <div class="cn-pill fade-in"><div class="cn-num">100+</div><div class="cn-label">Projects Shipped</div></div>
+      <div class="cn-pill fade-in"><div class="cn-num">14</div><div class="cn-label">Countries</div></div>
+      <div class="cn-pill fade-in"><div class="cn-num">66</div><div class="cn-label">Days of Habit</div></div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="community-closing fade-in">
+      <p>Not just code. Not just ideas. <strong>A culture of thinking.</strong></p>
+      <p>They questioned. They struggled. They helped each other. They shipped. They celebrated wins — both big and small. They transformed from <em>"I am overwhelmed by AI"</em> to <em>"I am building with AI."</em></p>
+      <p><strong>The community didn't just complete 66 days. They built a habit that will outlive the cohort. And that habit? It's now part of who they are.</strong></p>
+    </div>
+
   </div>
 </section>
 
